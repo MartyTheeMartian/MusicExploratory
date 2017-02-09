@@ -30,14 +30,12 @@ function fetchArtist(artist) {
       return pObj.json();
     })
     .then(function(json) {
-      if (json.error) {
-        title.innerText = "Artist Not Found";
-      }
       id = json.artists.items[0].id;
       genre = json.artists.items[0].genres[0];
       return json.artists.items[0];
     })
     .catch(function(error) {
+      title.innerText = "Try Another Artist";
       console.log(error);
       throw error;
     });
@@ -128,7 +126,10 @@ function displaySimArt() {
         for (let i = 0; i < 10; i++) {
           collectNode(i);
           let liNum = document.getElementById(i);
-          liNum.children[0].src = array[i].images[1].url;        liNum.children[1].innerHTML = `${i + 1}. &nbsp; ${array[i].name}`;
+          if (array[i].images.length !== 0) {
+            liNum.children[0].src = array[i].images[1].url;
+          }
+          liNum.children[1].innerHTML = `${i + 1}. &nbsp; ${array[i].name}`;
           liNum.children[2].innerText = "View Songs";
         }
         addViewSongsListeners();
