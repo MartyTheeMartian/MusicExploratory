@@ -2,13 +2,14 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
   <title>Music Exploratory</title>
 
   <script defer src="js/jquery-2.2.4.min.js"></script>
   <script defer src="js/materialize.min.js"></script>
   <script defer src="js/materialize.js"></script>
-  <script defer src="js/script.js"></script>
+  <script defer src="js/index.js"></script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="css/materialize.css">
@@ -23,17 +24,17 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">Music Exploratory</h1>
+        <h1 class="header center teal-text text-lighten-2">Music &nbsp; Exploratory</h1>
         <br><br>
         <div class="row">
-          <form>
+          <form id="form" action="searched.html">
             <div class="col offset-s2 s7">
               <div class="input-field">
-                <input type="text" placeholder="Enter Artist Name" id="search" name="search" required/>
+                <input id="searched" type="text" placeholder="Enter Artist Name"  name="search" required/>
               </div>
             </div>
             <div class="col s3">
-              <button class="btn-large waves-effect waves-light" type="submit" name="action">
+              <button class="btn-large waves-effect waves-light" type="submit" name="action" value="Searched Page">
                 <i class="material-icons right">search</i>
                 Search
               </button>
@@ -46,7 +47,9 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="img/wallpaper.jpg" alt="Unsplashed background img 1" style="display: block; transform: translate3d(-50%, 224px, 0px);"></div>
+    <div class="parallax">
+      <img src="img/wallpaper.jpg" class="responsive-img" style="display: block;">
+    </div>
   </div>
 
     <footer class="page-footer light-blue darken-4">
