@@ -7,6 +7,10 @@ let embed = document.getElementById('embed');
 let uriStr = "https://embed.spotify.com/?uri=";
 let scrolly = document.getElementsByClassName('scrolly')[0];
 let currentSimArt = "";
+let id = "";
+let genre = "";
+let simArtArray = [];
+let simArtPopSongsArray = [];
 
 // Stores artist name input in localStorage
 let form = document.getElementById('form');
@@ -16,11 +20,6 @@ form.addEventListener("submit", function() {
 
 searched.value = localStorage.getItem('artist');
 artist = searched.value;
-
-let id = "";
-let genre = "";
-let simArtArray = [];
-let simArtPopSongsArray = [];
 
 // Fetch Call Functions
 function fetchArtist(artist) {
@@ -140,37 +139,6 @@ function displaySimArt() {
       throw error;
     });
 }
-
-function displaySimArtPopSongs(promArray) {
-  Promise.resolve(promArray)
-    .then(function(array) {
-      console.log(array);
-  });
-}
-
-// let promSimAlb = Promise.resolve(promInit)
-//   .then(function() {
-//     displaySimAlb();
-// });
-//
-// let promSimAlbPopSongs = Promise.resolve(promSimArtPopSongs)
-//   .then(function() {
-//     displaySimAlbPopSongs();
-// });
-//
-// let promNewRel = Promise.resolve(promInit)
-//   .then(function() {
-//     displayNewRel();
-// });
-//
-// let promNewRelSongs = Promise.resolve(promNewRel)
-//   .then(function() {
-//     displayNewRelSongs();
-// });
-
-// function appendArtists(artistArray) {
-//
-// }
 
 // Collection Node Creator
 function collectNode(num) {
