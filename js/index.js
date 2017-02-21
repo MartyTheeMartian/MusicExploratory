@@ -2,6 +2,8 @@ let artist = "";
 let searched = document.getElementById('searched');
 let ul = document.getElementById("collect");
 
+localStorage.clear();
+
 // Stores artist name input in localStorage
 let form = document.getElementById('form');
 form.addEventListener("submit", function() {

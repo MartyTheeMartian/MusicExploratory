@@ -5,17 +5,23 @@ let ul = document.getElementById('collect');
 let player = document.getElementById('player');
 let embed = document.getElementById('embed');
 let uriStr = "https://embed.spotify.com/?uri=";
-let scrolly = document.getElementsByClassName('scrolly')[0];
+let scrolly = document.getElementById('scrolly');
 let currentSimArt = "";
 let id = "";
 let genre = "";
-let simArtArray = [];
-let simArtPopSongsArray = [];
+let simArtArray;
+let simArtPopSongsArray;
+let currArtist;
+let submit = false;
 
 // Stores artist name input in localStorage
 let form = document.getElementById('form');
 form.addEventListener("submit", function() {
   localStorage.setItem('artist', searched.value.trim());
+  if (submit) {
+    player.removeAttribute('hidden');
+  }
+  submit = true;
 });
 
 searched.value = localStorage.getItem('artist');
@@ -204,8 +210,8 @@ sideHomeBtn.addEventListener("click", function () {
 let sideArtBtn = document.getElementById('sideArt');
 sideArtBtn.addEventListener("click", function () {
   sideArtBtn.className += " disabled";
-  sideAlbBtn.className = "btn-large";
-  sideNewBtn.className = "btn-large";
+  // sideAlbBtn.className = "btn-large";
+  // sideNewBtn.className = "btn-large";
   hideSearch.setAttribute("hidden", "");
   while (ul.hasChildNodes()) {
     ul.removeChild(ul.lastChild);
@@ -214,18 +220,18 @@ sideArtBtn.addEventListener("click", function () {
 
 });
 
-let sideAlbBtn = document.getElementById('sideAlb');
-sideAlbBtn.addEventListener("click", function () {
-  sideArtBtn.className = "btn-large";
-  sideAlbBtn.className += " disabled";
-  sideNewBtn.className = "btn-large";
-
-});
-
-let sideNewBtn = document.getElementById('sideNew');
-sideNewBtn.addEventListener("click", function () {
-  sideArtBtn.className = "btn-large";
-  sideAlbBtn.className = "btn-large";
-  sideNewBtn.className += " disabled";
-
-});
+// let sideAlbBtn = document.getElementById('sideAlb');
+// sideAlbBtn.addEventListener("click", function () {
+//   sideArtBtn.className = "btn-large";
+//   sideAlbBtn.className += " disabled";
+//   sideNewBtn.className = "btn-large";
+//
+// });
+//
+// let sideNewBtn = document.getElementById('sideNew');
+// sideNewBtn.addEventListener("click", function () {
+//   sideArtBtn.className = "btn-large";
+//   sideAlbBtn.className = "btn-large";
+//   sideNewBtn.className += " disabled";
+//
+// });

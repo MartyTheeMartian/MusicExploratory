@@ -1,11 +1,17 @@
 
-.scrolly {
+#scrolly {
   height: 420px;
   overflow: scroll
 }
 
 body {
   background-image: url('../img/wallpaper2.jpg');
-  background-size: 100%;
+  background-size: 98%;
   background-color: #00111a;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width:100%;
 }
