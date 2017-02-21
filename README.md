@@ -1,4 +1,7 @@
 # q1_project
+Music Exploratory
+
+Deployed Link: http://musicexploratory.surge.sh/
 
 This app requires Spotify (free app which can be downloaded here: https://www.spotify.com/us/download/ ). 
 This app allows the user to input an artist into the search bar.
